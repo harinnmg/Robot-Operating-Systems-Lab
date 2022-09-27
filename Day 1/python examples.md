@@ -63,4 +63,8 @@ if(robot_command==left):
 if(robot_command==right): 
  	 	print(“robot moving right”) 
 ```
+```
+>> cd catkin_ws
+```
+
 
