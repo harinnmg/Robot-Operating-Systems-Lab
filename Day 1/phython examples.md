@@ -52,8 +52,10 @@ Print(c.keys()): [‘a’,’b’] Print(c.values()): [1,2]
 ## Wriing a code for robot to move forward, backward, turn left and turn right using python commands
 
 ```
-#!/usr/bin/env python3  robot_command=input(“Enter the commands:”)  	if(robot_command==forward): 
- 	 	print(“robot moving forward”)  	if(robot_command==backward): 
+#!/usr/bin/env python3  robot_command=input(“Enter the commands:”)  
+if(robot_command==forward): 
+ 	 	print(“robot moving forward”)  	
+ if(robot_command==backward): 
  	 	print(“robot moving backward”) 
 if(robot_command==left): 
  	 	print(“robot moving left”) 
