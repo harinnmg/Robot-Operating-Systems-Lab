@@ -9,6 +9,6 @@ Two ways to do python programming
 
 # First program: 
 
-'''
+```
 Print(“hello world”) 
-'''
+```
