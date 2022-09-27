@@ -6,3 +6,9 @@ Install the same if not installed by the command sudo apt-get install python pyt
 Two ways to do python programming 
 1.	Python interpreter 
 2.	Python scripts and running using interpreter 
+
+# First program: 
+
+'''
+Print(“hello world”) 
+'''
