@@ -30,13 +30,17 @@ Python is a dynamic typing language, which means that we don’t need to provide
 Indentation is simply the tab or white space prior to a line of code. In C++, we may use indentation to group a block of code, but it is not mandatory. The C++ code compiles even if we are not keeping any indentation, but it is different in Python. We should keep the block of code in the same indent; otherwise, it shows an indentation error. When indentation is mandatory, the code looks neat and readable. 
 
 3.	Semicolon: Not mandatory 
-4.
+
 4, Python variables: Tuples,lists, and dictionaries 
 
-a.	List:- in square brackets eg: a=[1,2,3] 
-
-b.	Tuples: In round brackets a=(1,2,3), not editable 
-
+a.	List:- in square brackets eg: 
+```
+a=[1,2,3] 
+```
+b.	Tuples: In round brackets, not editable  
+```
+a=(1,2,3)
+```
 c.	Dictionary: Curly brackets  
 ```
 c={“a”:1,”b”:2} 
