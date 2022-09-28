@@ -10,7 +10,7 @@ Two ways to do python programming
 # First program: 
 
 ```
-print(“hello world”) 
+print("hello world")
 ```
 # Python scripts: 
 Following are the steps to write a python script 
