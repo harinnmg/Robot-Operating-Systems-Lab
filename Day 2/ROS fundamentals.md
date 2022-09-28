@@ -16,22 +16,23 @@
 ```
 #!/usr/bin/env python
 import rospy
-from std_msgs.msg import string
+from std_msgs.msg import String
 def publishMethod():
- pub=rospy.publish('talker',string,queue_size=10)
- rospy.init_node('publish_node',anonymous=true)
- rate=rospy.rate(10)
-while not rospy.is_shutdown():
+ pub=rospy.Publisher('talker',String,queue_size=10)
+ rospy.init_node('publish_node',anonymous=True)
+ rate=rospy.Rate(10)
+ while not rospy.is_shutdown():
  
- publishstring= "hi"
- rospyloginfo('data is being sent')
- pub.publish(publishstring)
- rate.sleep()
+  publishstring= "hi"
+  rospy.loginfo('data is being sent')
+  pub.publish(publishstring)
+  rate.sleep()
 
-if_name_=='_main_':
-try:
-  publishMethod()
- except rospy.ROSInterruptException:
- pass
+if __name__ == '__main__':
+    try:
+        publishMethod()
+    except rospy.ROSInterruptException:
+        pass
+
  ```
  
