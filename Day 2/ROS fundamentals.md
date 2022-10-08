@@ -1,7 +1,7 @@
-# Creating ROS Workspace
+# ROS Workspace
 
  ```
- >> mkdir cd_catkin_ws/src
+ 
  >> cd catkin_ws
  >> catkin_make
  ```
@@ -10,6 +10,7 @@
 ```
 >> cd catkin_ws/src
 >> catkin_create_pkg <package_name> rospy roscpp
+>>catkin_make
 ```
 # Publisher code
 
@@ -38,6 +39,8 @@ if __name__ == '__main__':
  
 # Subscriber code
 
+Open a new 
+
 ```
 #!/usr/bin/env python
 import rospy
@@ -59,4 +62,8 @@ def listener():
 if __name__ == '__main__':
     listener()
     
+```
+#Publishing through terminal
+```
+>>rostopic pub /topic_name std_msgs/String hello
 ```
