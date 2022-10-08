@@ -12,6 +12,7 @@
 >> catkin_create_pkg <package_name> rospy roscpp
 >>catkin_make
 ```
+Now create a new text file inside the package and copy the following code to it. Name it as "talker.py"
 # Publisher code
 
 ```
@@ -39,7 +40,7 @@ if __name__ == '__main__':
  
 # Subscriber code
 
-Open a new 
+Open a new text file inside the package and name "subcriber.py"
 
 ```
 #!/usr/bin/env python
@@ -63,7 +64,28 @@ if __name__ == '__main__':
     listener()
     
 ```
-#Publishing through terminal
+* After completion of this, do the following commands
+```
+chmod a+rw talker.py
+chmod a+rw subsciber.py
+```
+# Running a ROS Master
+Next is to run a ros master in a terminal in the directory catkin_ws
+```
+roscore
+```
+# Communication between nodes
+Open a new terminal and type following commands
+```
+source devel/setup.bash
+rosrun <package_name> talker.py
+```
+Open another terminal and type following commands
+```
+source devel/setup.bash
+rosrun <package_name> subscriber.py
+```
+# Publishing through terminal
 ```
 >>rostopic pub /topic_name std_msgs/String hello
 ```
