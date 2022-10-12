@@ -168,7 +168,7 @@ int main(int argc, char **argv)
 Then add following lines in cMakeLists.txt inside src
 ```
  
- add_executable(talkerr src/talker.cpp)
+ add_executable(talker src/talker.cpp)
 add_dependencies(talker ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
  target_link_libraries(ltalker
  ${catkin_LIBRARIES}
