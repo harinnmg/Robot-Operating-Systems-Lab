@@ -137,6 +137,7 @@ int main(int argc, char **argv)
 }
 ```
 # Subscriber Node in C++
+In the SRC of 
 ```
 #include "ros/ros.h"
 #include "std_msgs/String.h"
@@ -164,3 +165,20 @@ int main(int argc, char **argv)
   return 0;
 }
 ```
+Then add following lines in cMakeLists.txt inside src
+```
+ 
+ add_executable(talkerr src/talker.cpp)
+add_dependencies(talker ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+ target_link_libraries(ltalker
+ ${catkin_LIBRARIES}
+ 
+add_executable(listner src/listner.cpp)
+add_dependencies(listner ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+ target_link_libraries(listner
+ ${catkin_LIBRARIES}
+ )
+
+ )
+ ```
+ 
