@@ -23,5 +23,14 @@ To know more
 rosnode info /turtlesim
 ```
 
-
+To know which all topics are published, we check
+  ```
+  rostopic list
+  ```
+  We can check the published topic, using
+  ```
+  rostopic echo /turtle1/pose
+  ```
+  
+  
 
