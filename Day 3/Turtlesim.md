@@ -27,10 +27,25 @@ To know which all topics are published, we check
   ```
   rostopic list
   ```
-  We can check the published topic, using
+  We can check the published topic, using following command (example)
   ```
   rostopic echo /turtle1/pose
   ```
   
-  
+  We can publish to a publisher using following command (edit)
+  ```
+  rostopic pub /turtle1/cmd_vel geometry_msgs/Twist "linear:
+  x: 0.0
+  y: 0.0
+  z: 0.0
+angular:
+  x: 0.0
+  y: 0.0
+  z: 0.0" 
+
+```
+We can also done using a python or c++ code, python code is attached for reference
+
+
+
 
