@@ -170,8 +170,9 @@ Then add following lines in cMakeLists.txt inside src
  
  add_executable(talker src/talker.cpp)
 add_dependencies(talker ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
- target_link_libraries(ltalker
+ target_link_libraries(talker
  ${catkin_LIBRARIES}
+ )
  
 add_executable(listner src/listner.cpp)
 add_dependencies(listner ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
@@ -179,6 +180,5 @@ add_dependencies(listner ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_T
  ${catkin_LIBRARIES}
  )
 
- )
  ```
  
