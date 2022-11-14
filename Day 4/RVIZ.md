@@ -86,4 +86,10 @@ int main( int argc, char** argv )
 }
 
 ```
-
+```
+add_executable(talker shapes.cpp)
+add_dependencies(talker ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+ target_link_libraries(talker
+ ${catkin_LIBRARIES}
+ )
+```
