@@ -75,11 +75,12 @@ if __name__ == '__main__':
     <node pkg="turtlesim" type="turtlesim_node" name="sim"/>
     <node pkg="turtlesim" type="turtle_teleop_key" name="teleop" output="screen"/>
 
-    <node name="turtle1_tf_broadcaster" pkg="learning_tf" type="turtle_tf_broadcaster.py" respawn="false" output="screen" >
+    <node name="turtle1_tf_broadcaster" pkg="<package name>" type="turtle_tf_broadcaster.py" respawn="false" output="screen" >
       <param name="turtle" type="string" value="turtle1" />
     </node>
-    <node name="turtle2_tf_broadcaster" pkg="learning_tf" type="turtle_tf_broadcaster.py" respawn="false" output="screen" >
+    <node name="turtle2_tf_broadcaster" pkg="<package name>"" type="turtle_tf_broadcaster.py" respawn="false" output="screen" >
       <param name="turtle" type="string" value="turtle2" /> 
     </node>
-
+   <node pkg="<package name>"" type="turtle_tf_listener.py" 
+          name="listener" />
   </launch>
