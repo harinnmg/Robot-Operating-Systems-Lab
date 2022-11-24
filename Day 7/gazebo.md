@@ -1,0 +1,48 @@
+Urdf file
+
+```
+<?xml version="1.0"?>
+<robot name="myfirst">
+<link name="base_link">
+<inertial>
+<mass value="5"/>
+<origin rpy="0 0 0" xyz="0 0 0"/>
+<inertia ixx="0" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0"/>
+</inertial>
+<collision>
+<geometry>
+<cylinder length="0.5" radius="0.5"/>
+</geometry>
+</collision>
+<visual>
+<geometry>
+<cylinder length="0.5" radius="0.5"/>
+</geometry>
+</visual>
+</link>
+
+</robot>
+```
+
+Launch file
+
+```
+<?xml version="1.0"?>
+<launch>
+<param name="robot_description" command="cat $(find
+urdftest1)/urdf/name.urdf" />
+<arg name = "x" default = "0"/>
+<arg name = "y" default = "0"/>
+<arg name = "z" default = "0"/>
+<node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" output="screen"
+args="-urdf -param robot_description -model my_first -x $(arg x) -y $(arg y) -z $(arg z)"/>
+
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="use_sim_time" value="true"/>
+    <arg name="debug" value="false"/>
+    <arg name="gui" value="true" />
+    <arg name="world_name" value="true"/>
+  </include>
+
+</launch>
+```
