@@ -2,11 +2,15 @@
 ## Theory
 Gazebo is an open robotics simulator, where one can design and simulate robots. A robot will be associated with different predefined structures, sensors, actuators etc. So as seen in example 5, after adding basic shapes, we can add the capabilities in the form of plugins. 
 plugin is a chunk of code that is compiled as a shared library and inserted into the simulation. The plugin has direct access to all the functionality of Gazebo through the standard C++ classes.
+
 Plugins are useful because they:
-•	let developers control almost any aspect of Gazebo
-•	are self-contained routines that are easily shared
-•	can be inserted and removed from a running system
+
+ •	let developers control almost any aspect of Gazebo
+ •	are self-contained routines that are easily shared
+ •	can be inserted and removed from a running system
+ 
 Previous versions of Gazebo utilized controllers. These behaved in much the same way as plugins, but were statically compiled into Gazebo. Plugins are more flexible, and allow users to pick and choose what functionality to include in their simulations
+
 You should use a plugin when:
 •	you want to programmatically alter a simulation
 Ex: move models, respond to events, insert new models given a set of preconditions
