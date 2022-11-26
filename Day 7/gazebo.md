@@ -1,3 +1,6 @@
+1. Create a new package inside your workspace src, and create three folders inside; urdf,launch and world.
+2. Inside urdf folder, create a text file with .urdf extension and copy the following code.
+
 Urdf file
 
 ```
@@ -23,14 +26,14 @@ Urdf file
 
 </robot>
 ```
-
+3. Inside the launch folder, create a text file with extension .launch, copy the following code, replace <package_name> with your package name and <urdf_name> with the urdf name.
 Launch file
 
 ```
 <?xml version="1.0"?>
 <launch>
 <param name="robot_description" command="cat $(find
-urdftest1)/urdf/name.urdf" />
+<package_name>)/urdf/<urdf_name>.urdf" />
 <arg name = "x" default = "0"/>
 <arg name = "y" default = "0"/>
 <arg name = "z" default = "0"/>
@@ -46,7 +49,10 @@ args="-urdf -param robot_description -model my_first -x $(arg x) -y $(arg y) -z 
 
 </launch>
 ```
-Create a custom world
+4. Go to workspace and catkin_make
+5. Apply the command ```source devel/setup.bash```
+6. Run the command ```roslaunch <package_name> <launch_code with extension>``` replace  <package_name> with your package name and <launch_code with extension> with your launch file name with .launch extension. You will see the cylinder is spawned in Gazebo.
+#Create a custom world
 
 ```
 <?xml version="1.0"?>
