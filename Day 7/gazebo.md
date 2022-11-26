@@ -52,7 +52,14 @@ args="-urdf -param robot_description -model my_first -x $(arg x) -y $(arg y) -z 
 4. Go to workspace and catkin_make
 5. Apply the command ```source devel/setup.bash```
 6. Run the command ```roslaunch <package_name> <launch_code with extension>``` replace  <package_name> with your package name and <launch_code with extension> with your launch file name with .launch extension. You will see the cylinder is spawned in Gazebo.
-#Create a custom world
+# Create a custom world
+
+1. Close all the terminals and open Gazebo
+```gazebo```
+2. Go to eidt>>bulding editor and create shapes your own. Save the shape and exit building editor
+3. Save the world from file>>save to the location 'world' folder inside your package
+4. Go to the launch folder inside the package and edit the code, replace <package_nmae> and <world_nmae> with yours
+
 
 ```
 <?xml version="1.0"?>
@@ -63,7 +70,7 @@ urdftest1)/urdf/name.urdf" />
 <arg name = "y" default = "0"/>
 <arg name = "z" default = "0"/>
  <!-- World File -->
-  <arg name="world_file" default="$(find urdftest1)/world/house.world"/>
+  <arg name="world_file" default="$(find <package_name>)/world/<world_name>"/>
 <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" output="screen"
 args="-urdf -param robot_description -model my_first -x $(arg x) -y $(arg y) -z $(arg z)"/>
 
@@ -76,3 +83,4 @@ args="-urdf -param robot_description -model my_first -x $(arg x) -y $(arg y) -z 
 
 </launch>
 ```
+5. Do the procedure for roslaunch as we done previously 
