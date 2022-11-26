@@ -46,3 +46,27 @@ args="-urdf -param robot_description -model my_first -x $(arg x) -y $(arg y) -z 
 
 </launch>
 ```
+Create a custom world
+
+```
+<?xml version="1.0"?>
+<launch>
+<param name="robot_description" command="cat $(find
+urdftest1)/urdf/name.urdf" />
+<arg name = "x" default = "0"/>
+<arg name = "y" default = "0"/>
+<arg name = "z" default = "0"/>
+ <!-- World File -->
+  <arg name="world_file" default="$(find urdftest1)/world/house.world"/>
+<node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" output="screen"
+args="-urdf -param robot_description -model my_first -x $(arg x) -y $(arg y) -z $(arg z)"/>
+
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="use_sim_time" value="true"/>
+    <arg name="debug" value="false"/>
+    <arg name="gui" value="true" />
+    <arg name="world_name" value="true"/>
+  </include>
+
+</launch>
+```
