@@ -1,3 +1,30 @@
+#Experiment 6: Familiarization of Gazebo
+## Theory
+Gazebo is an open robotics simulator, where one can design and simulate robots. A robot will be associated with different predefined structures, sensors, actuators etc. So as seen in example 5, after adding basic shapes, we can add the capabilities in the form of plugins. 
+plugin is a chunk of code that is compiled as a shared library and inserted into the simulation. The plugin has direct access to all the functionality of Gazebo through the standard C++ classes.
+Plugins are useful because they:
+•	let developers control almost any aspect of Gazebo
+•	are self-contained routines that are easily shared
+•	can be inserted and removed from a running system
+Previous versions of Gazebo utilized controllers. These behaved in much the same way as plugins, but were statically compiled into Gazebo. Plugins are more flexible, and allow users to pick and choose what functionality to include in their simulations
+You should use a plugin when:
+•	you want to programmatically alter a simulation
+Ex: move models, respond to events, insert new models given a set of preconditions
+•	you want a fast interface to gazebo, without the overhead of the transport layer
+Ex: No serialization and deserialization of messages.
+•	you have some code that could benefit others and want to share it
+Plugin Types
+There are currently 6 types of plugins
+•	World
+•	Model
+•	Sensor
+•	System
+•	Visual
+•	GUI
+Each plugin type is managed by a different component of Gazebo. For example, a Model plugin is attached to and controls a specific model in Gazebo. Similarly, a World plugin is attached to a world, and a Sensor plugin to a specific sensor. The System plugin is specified on the command line, and loads first during a Gazebo startup. This plugin gives the user control over the startup process.
+A plugin type should be chosen based on the desired functionality. Use a World plugin to control world properties, such as the physics engine, ambient lighting, etc. Use a Model plugin to control joints, and state of a model. Use a Sensor plugin to acquire sensor information and control sensor properties
+
+## Procedure
 1. Create a new package inside your workspace src, and create three folders inside; urdf,launch and world.
 2. Inside urdf folder, create a text file with .urdf extension and copy the following code.
 
@@ -52,7 +79,7 @@ args="-urdf -param robot_description -model my_first -x $(arg x) -y $(arg y) -z 
 4. Go to workspace and catkin_make
 5. Apply the command ```source devel/setup.bash```
 6. Run the command ```roslaunch <package_name> <launch_code with extension>``` replace  <package_name> with your package name and <launch_code with extension> with your launch file name with .launch extension. You will see the cylinder is spawned in Gazebo.
-# Create a custom world
+# Experiment 7: Create a custom world
 
 1. Close all the terminals and open Gazebo
 ```gazebo```
