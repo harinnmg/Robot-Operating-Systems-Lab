@@ -100,6 +100,8 @@ args="-urdf -param robot_description -model my_first -x $(arg x) -y $(arg y) -z 
 4. Go to workspace and catkin_make
 5. Apply the command ```source devel/setup.bash```
 6. Run the command ```roslaunch <package_name> <launch_code with extension>``` replace  <package_name> with your package name and <launch_code with extension> with your launch file name with .launch extension. You will see the cylinder is spawned in Gazebo.
+7. Adding plugins: follow the link instructions.
+https://classic.gazebosim.org/tutorials?tut=plugins_hello_world&cat=write_plugin
 # Experiment 7: Create a custom world
 
 1. Close all the terminals and open Gazebo
