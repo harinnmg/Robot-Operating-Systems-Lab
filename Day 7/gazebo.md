@@ -110,17 +110,16 @@ https://classic.gazebosim.org/tutorials?tut=plugins_hello_world&cat=write_plugin
 3. Save the world from file>>save to the location 'world' folder inside your package
 4. Go to the launch folder inside the package and edit the code, replace <package_nmae> and <world_nmae> with yours
 
-
 ```
 <?xml version="1.0"?>
 <launch>
 <param name="robot_description" command="cat $(find
-urdftest1)/urdf/name.urdf" />
+<package_name>)/urdf/<urdf_name>" />
 <arg name = "x" default = "0"/>
 <arg name = "y" default = "0"/>
 <arg name = "z" default = "0"/>
  <!-- World File -->
-  <arg name="world_file" default="$(find <package_name>)/world/<world_name>"/>
+  <arg name="world_file" default="$(find package name)/world/world name"/>
 <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" output="screen"
 args="-urdf -param robot_description -model my_first -x $(arg x) -y $(arg y) -z $(arg z)"/>
 
@@ -128,7 +127,7 @@ args="-urdf -param robot_description -model my_first -x $(arg x) -y $(arg y) -z 
     <arg name="use_sim_time" value="true"/>
     <arg name="debug" value="false"/>
     <arg name="gui" value="true" />
-    <arg name="world_name" value="true"/>
+    <arg name="world_name" value="$(arg world_file)"/>
   </include>
 
 </launch>
