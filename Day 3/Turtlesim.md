@@ -27,6 +27,11 @@ To know which all topics are published, we check
   ```
   rostopic list
   ```
+Move a turtle using key board
+```
+rosrun turtlesim turtle_teleop_key
+```
+
   We can check the published topic, using following command (example)
   ```
   rostopic echo /turtle1/pose
