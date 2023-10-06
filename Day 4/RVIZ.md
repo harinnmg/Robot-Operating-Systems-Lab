@@ -187,3 +187,8 @@ int main( int argc, char** argv )
   }
 }
 ```
+
+
+```
+rosrun interactive_marker_tutorials basic_controls
+```
